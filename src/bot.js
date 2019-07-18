@@ -3,6 +3,7 @@
 // |__) \__/  |  |  \ |  |
 
 // This is the main file for the starter-slack bot.
+// edited by Sam Loop
 
 // Import Botkit's core features
 const { Botkit } = require('botkit');
@@ -47,3 +48,8 @@ const adapter = new SlackAdapter({
     getTokenForTeam: getTokenForTeam,
     getBotUserByTeam: getBotUserByTeam,
 });
+
+/*function like_message(self, reaction='robot_face') {
+    sc = SlackClient(botToken)
+    res = sc.api_call("reactions.add", name=reaction, channel=self._channel, timestamp=self._ts)
+}*/

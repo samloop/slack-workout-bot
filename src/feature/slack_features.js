@@ -135,14 +135,16 @@ module.exports = function(controller) {
     controller.on('block_actions', async (bot, message) => {
         await bot.reply(message, `Sounds like your choice is ${ message.incoming_message.channelData.actions[0].value }`)
     });
-
+/*           **-------------
+         SLASH COMMAND IMPLEMENTATION
+              -------------**/
     controller.on('slash_command', async(bot, message) => {
-        if (message.text === 'plain') {
-            await bot.reply(message, 'This is a plain reply');
-        } else if (message.text === 'public') {
-            await bot.replyPublic(message, 'This is a public reply');
-        } else if (message.text === 'private') {
-            await bot.replyPrivate(message, 'This is a private reply');
+        if (message.text === 'leaderboard') {
+            await bot.reply(message, 'put leaderboard text here');
+        } else if (message.text === 'challenge') {
+            await bot.replyPublic(message, 'put some way to challenge people here');
+        } else if (message.text === 'help') {
+            await bot.replyPrivate(message, 'put help text here');
         }
 
         // set http status
